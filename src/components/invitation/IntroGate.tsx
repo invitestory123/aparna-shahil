@@ -12,7 +12,7 @@ type Stage = "seal" | "film" | "done";
  * The cover of the storybook: a wax-sealed envelope. Tapping the seal plays the
  * opening film, which dissolves into the invitation at 7.15s.
  */
-export function IntroGate() {
+export function IntroGate({ onOpen }: { onOpen?: () => void } = {}) {
   const [stage, setStage] = useState<Stage>("seal");
   const [playing, setPlaying] = useState(false);
   const [fading, setFading] = useState(false);
@@ -30,6 +30,7 @@ export function IntroGate() {
 
   const open = () => {
     if (stage !== "seal") return;
+    onOpen?.();
     setStage("film");
     const el = videoRef.current;
     if (!el) return;
@@ -37,9 +38,9 @@ export function IntroGate() {
     void el.play();
   };
 
-
   const finish = () => {
     if (fading) return;
+    onOpen?.();
     setFading(true);
     window.setTimeout(() => setStage("done"), 1300);
   };

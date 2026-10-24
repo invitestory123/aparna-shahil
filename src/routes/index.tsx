@@ -1,7 +1,8 @@
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { IntroGate } from "@/components/invitation/IntroGate";
 import { Hero } from "@/components/invitation/Hero";
-
+import { BackgroundMusic } from "@/components/invitation/BackgroundMusic";
 import { CoupleStory } from "@/components/invitation/CoupleStory";
 import { Countdown } from "@/components/invitation/Countdown";
 import { Details } from "@/components/invitation/Details";
@@ -37,9 +38,12 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const [playMusic, setPlayMusic] = useState(false);
+
   return (
     <main className="relative w-full overflow-x-hidden">
-      <IntroGate />
+      <IntroGate onOpen={() => setPlayMusic(true)} />
+      <BackgroundMusic autoPlayTrigger={playMusic} />
       <Hero />
       <CoupleStory />
       <Countdown />
