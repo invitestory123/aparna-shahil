@@ -1,18 +1,33 @@
 import { useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { X } from "lucide-react";
-const dancing = "https://media.invitestory.in/ever-after-bloom/src/assets/scene-dancing.jpg";
-const walking = "https://media.invitestory.in/ever-after-bloom/src/assets/scene-walking.jpg";
-const balcony = "https://media.invitestory.in/ever-after-bloom/src/assets/scene-balcony.jpg";
-const hands = "https://media.invitestory.in/ever-after-bloom/src/assets/scene-hands.jpg";
-const couple = "https://media.invitestory.in/ever-after-bloom/src/assets/couple-lanterns.png";
+const couple = "/assets/couple.jpg";
+const brideStanding = "/assets/bride-standing.jpg";
+const groomStanding = "/assets/groom-standing.jpg";
 import { Ornament, Reveal, SectionTitle } from "./Reveal";
 
 const plates = [
-  { src: walking, alt: "The couple walking hand in hand through a palace garden", span: "sm:row-span-2", ratio: "aspect-[4/5]" },
-  { src: dancing, alt: "The couple dancing under strings of warm lights", span: "", ratio: "aspect-square" },
-  { src: hands, alt: "Two joined hands, one painted with henna", span: "", ratio: "aspect-square" },
-  { src: balcony, alt: "The couple seated on a marble balcony at golden hour", span: "sm:col-span-2", ratio: "aspect-[16/10]" },
+  {
+    src: couple,
+    alt: "Aparna and Sahil together",
+    span: "sm:col-span-2",
+    ratio: "aspect-[16/10] sm:aspect-[16/9]",
+    objectPos: "object-center",
+  },
+  {
+    src: brideStanding,
+    alt: "Aparna in bridal elegance",
+    span: "sm:col-span-1",
+    ratio: "aspect-[3/4] sm:aspect-[4/5]",
+    objectPos: "object-top",
+  },
+  {
+    src: groomStanding,
+    alt: "Sahil in festive attire",
+    span: "sm:col-span-1",
+    ratio: "aspect-[3/4] sm:aspect-[4/5]",
+    objectPos: "object-top",
+  },
 ];
 
 export function Gallery() {
@@ -30,12 +45,12 @@ export function Gallery() {
         }}
       />
       <div className="mx-auto max-w-4xl">
-        <SectionTitle eyebrow="Chapter Four" title="Painted moments" note="A few pages from the album" />
+        <SectionTitle eyebrow="Chapter Four" title="Cherished Moments" note="A few pages from our album" />
         <Ornament className="mt-8" />
 
-        <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2">
           {plates.map((p, i) => (
-            <Reveal key={p.alt} delay={i * 0.06} className={p.span}>
+            <Reveal key={p.src} delay={i * 0.08} className={p.span}>
               <motion.button
                 type="button"
                 onClick={() => setOpen(i)}
@@ -44,7 +59,7 @@ export function Gallery() {
                 transition={{
                   y: { duration: 7 + i, repeat: Infinity, ease: "easeInOut" },
                 }}
-                className="plate group block h-full w-full overflow-hidden rounded-[1.8rem] p-2 text-left"
+                className="plate group block h-full w-full overflow-hidden rounded-[1.8rem] p-2 text-left shadow-sm"
               >
                 <div className="relative h-full overflow-hidden rounded-[1.4rem]">
                   <img
@@ -53,7 +68,7 @@ export function Gallery() {
                     loading="lazy"
                     width={1024}
                     height={1024}
-                    className={`${p.ratio} h-full w-full object-cover transition-transform duration-[1400ms] group-hover:scale-[1.05]`}
+                    className={`${p.ratio} ${p.objectPos} h-full w-full object-cover transition-transform duration-[1400ms] group-hover:scale-[1.04]`}
                   />
                   <span
                     aria-hidden
@@ -70,16 +85,7 @@ export function Gallery() {
         </div>
 
         <Reveal delay={0.1} className="mt-12 flex justify-center">
-          <motion.img
-            src={couple}
-            alt="Illustration of the bride and groom looking up at rising lanterns"
-            loading="lazy"
-            width={556}
-            height={908}
-            className="w-40 sm:w-52"
-            animate={reduced ? {} : { y: [0, -7, 0] }}
-            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          />
+          <Ornament />
         </Reveal>
       </div>
 

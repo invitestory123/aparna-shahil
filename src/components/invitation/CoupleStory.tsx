@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
-const bride = "https://media.invitestory.in/ever-after-bloom/src/assets/portrait-bride.jpg";
-const groom = "https://media.invitestory.in/ever-after-bloom/src/assets/portrait-groom.jpg";
+const bride = "/assets/bride-portrait.jpg";
+const groom = "/assets/groom-portrait.jpg";
 import { invitation } from "@/content/invitation";
 import { Ornament, Reveal, SectionTitle } from "./Reveal";
 
@@ -35,7 +35,7 @@ function PortraitCard({
             loading="lazy"
             width={1024}
             height={1024}
-            className="aspect-square w-full object-cover"
+            className="aspect-[4/5] w-full object-cover object-top"
             initial={{ scale: 1.06 }}
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
@@ -86,12 +86,12 @@ export function CoupleStory() {
         <div className="mt-12 grid gap-8 sm:grid-cols-2 sm:gap-10">
           <PortraitCard
             src={bride}
-            alt="Watercolour portrait of the bride in a blush and gold saree"
+            alt="Portrait of Aparna, the bride"
             {...story.bride}
           />
           <PortraitCard
             src={groom}
-            alt="Watercolour portrait of the groom in an ivory sherwani"
+            alt="Portrait of Sahil, the groom"
             flip
             {...story.groom}
           />
