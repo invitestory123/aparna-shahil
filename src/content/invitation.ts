@@ -30,7 +30,6 @@ export const invitation = {
     kicker: "Together with our families",
     eyebrow: "Save the Date",
     blessing: "Two souls, two families, one sacred journey",
-    youtubeVideoUrl: "https://youtube.com/shorts/BmC8RIYnyrc?si=7qOddsmhkb-AN2Me",
   },
   story: {
     title: "Aparna & Sahil",

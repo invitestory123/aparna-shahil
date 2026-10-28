@@ -17,23 +17,15 @@ export function Hero() {
 
   return (
     <section className="relative h-[100svh] min-h-[620px] w-full overflow-hidden">
-      {/* YouTube Shorts Rustic Wedding Video Background */}
-      <motion.div className="absolute inset-0 overflow-hidden" style={{ y: skyY, scale: 1.05 }}>
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          poster="/assets/bg-poster.webp"
-          className="h-full w-full object-cover object-center"
-        >
-          <source src="/assets/bg-video.mp4" type="video/mp4" />
-          <img
-            src="/assets/bg-poster.webp"
-            alt="Rustic wedding invitation background"
-            className="h-full w-full object-cover object-center"
-          />
-        </video>
+      {/* Painted sky + palace plate */}
+      <motion.div className="absolute inset-0" style={{ y: skyY, scale: 1.08 }}>
+        <img
+          src={heroPalace}
+          alt="Watercolour illustration of a sandstone palace beneath a blush dawn sky"
+          width={1024}
+          height={1536}
+          className="h-full w-full object-cover object-bottom"
+        />
       </motion.div>
 
       {/* Soft haze so type always reads */}
