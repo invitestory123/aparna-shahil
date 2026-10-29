@@ -10,8 +10,8 @@ export const invitation = {
     initials: "A & S",
   },
   parents: {
-    bride: "Smt. Sushila Gupta & Shri Pramod Kumar Gupta",
-    groom: "Smt. Sangeeta Gupta & Shri Sarwan Gupta",
+    bride: "Smt. Sangeeta Gupta & Shri Sarwan Gupta",
+    groom: "Smt. Sushila Gupta & Shri Pramod Kumar Gupta",
     blessingText: "With the heavenly blessings of our elders and the affectionate love of our families",
   },
   /** ISO date-time of the ceremony, used by the countdown and calendar file. */
@@ -37,13 +37,13 @@ export const invitation = {
     bride: {
       name: "Aparna",
       role: "The Bride",
-      parents: "D/o Smt. Sushila Gupta & Shri Pramod Kumar Gupta",
+      parents: "D/o Smt. Sangeeta Gupta & Shri Sarwan Gupta",
       text: "With grace, kindness, and an infectious smile that brings warmth wherever she goes, Aparna is ready to step into this blessed new chapter of life.",
     },
     groom: {
       name: "Sahil",
       role: "The Groom",
-      parents: "S/o Smt. Sangeeta Gupta & Shri Sarwan Gupta",
+      parents: "S/o Smt. Sushila Gupta & Shri Pramod Kumar Gupta",
       text: "Steadfast, affectionate, and full of heartfelt devotion, Sahil steps forward with joy and promises of a lifetime together.",
     },
   },
